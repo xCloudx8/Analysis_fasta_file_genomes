@@ -15,18 +15,16 @@ BACTERIA=(
 
 for f in "${BACTERIA[@]}"
 do
-   java -cp IGTools_cli.jar igtools.cli.util.FASTATo3bit /home/daniele/Documents/Project/Bacteria/"$f".fna "$f".3bit
-   mv "$f.3bit" /home/daniele/Documents/Project/Bacteria/Bacteria_3Bit
+   java -cp IGTools_cli.jar igtools.cli.util.FASTATo3bit /Project/Bacteria/"$f".fna "$f".3bit
+   mv "$f.3bit" /Project/Bacteria/Bacteria_3Bit
    echo "$f done"
    echo ""
 done
 
 for f in "${BACTERIA[@]}"
 do
-   java -cp IGTools_cli.jar igtools.cli.dictionaries.BuildNELSA /home/daniele/Documents/Project/Bacteria/Bacteria_3Bit/"$f".3bit "$f".nelsa
-   mv "$f.nelsa" /home/daniele/Documents/Project/Bacteria/Bacteria_nelsa
+   java -cp IGTools_cli.jar igtools.cli.dictionaries.BuildNELSA /Project/Bacteria/Bacteria_3Bit/"$f".3bit "$f".nelsa
+   mv "$f.nelsa"/Project/Bacteria/Bacteria_nelsa
    echo "$f done"
    echo ""
 done
-
-cd /home/daniele/Documents/Project/
