@@ -47,7 +47,7 @@ for f in "${VIRUSES[@]}"
 		 echo "-------------------------------------------------------------------------k='$m'" >> /Project/Reports/Virus_distr/mdistr/"$f".mdistr
      		 java -cp IGTools_cli.jar igtools.cli.distributions.MultiplicityDistribution $m "a" /Project/Virus/Virus_3Bit/"$f".3bit /Project/Virus/Virus_nelsa/"$f".nelsa | awk '{min=9999}; /#/ {num+=1; tot+=$3; if ($3<min) min=$3; if ($3>max) max=$3} END{ print  min " " tot/num  "  " max }' >> /Project/Reports/Virus_distr/minmaxavg/"$f"min_avg_max.csv
 		 echo " " >> /Project/Reports/Virus_distr/mdistr/"$f".mdistr
-		 java -cp IGTools_cli.jar igtools.cli.distributions.MultiplicityDistribution $m "a" /home/daniele/Documents/Project/Virus/Virus_3Bit/"$f".3bit /home/daniele/Documents/Project/Virus/Virus_nelsa/"$f".nelsa >> /Project/Reports/Virus_distr/mdistr/"$f".mdistr
+		 java -cp IGTools_cli.jar igtools.cli.distributions.MultiplicityDistribution $m "a" /Project/Virus/Virus_3Bit/"$f".3bit /Project/Virus/Virus_nelsa/"$f".nelsa >> /Project/Reports/Virus_distr/mdistr/"$f".mdistr
 	 done
 done
 
