@@ -40,7 +40,7 @@ for f in "${BACTERIA[@]}"
       echo   "Analizing MultiplicityDistribution: "$f " " $m
       echo "-------------------------------------------------------------------------k=''$m'" >> /Project/Reports/Bacteria_distr/mdistr/"$f".mdistr
       java -cp IGTools_cli.jar igtools.cli.distributions.MultiplicityDistribution $m "a" /Project/Bacteria/Bacteria_3Bit/"$f".3bit /Project/Bacteria/Bacteria_nelsa/"$f".nelsa | awk '{min=9999}; /#/ {num+=1; tot+=$3; if ($3<min) min=$3; if ($3>max) max=$3} END{ print  min " " tot/num " " max }' >> /Project/Reports/Bacteria_distr/minmaxavg/"$f"min_max_avg.csv
-      echo " " >> /home/daniele/Documents/Project/Reports/Bacteria_distr/mdistr/"$f".mdistr
+      echo " " >> /Project/Reports/Bacteria_distr/mdistr/"$f".mdistr
       java -cp IGTools_cli.jar igtools.cli.distributions.MultiplicityDistribution $m "a" /Project/Bacteria/Bacteria_3Bit/"$f".3bit /Project/Bacteria/Bacteria_nelsa/"$f".nelsa >> /Project/Reports/Bacteria_distr/mdistr/"$f".mdistr
 	 done
 done
